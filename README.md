@@ -18,7 +18,8 @@ Project SDK to the Java 1.8 JDK. Then click on the sync button in IntelliJ, and 
 called `Minecraft Client`. If it doesn't then try relaunching your IntelliJ. **Warning for Mac users**: You might have to remove the `-XStartOnFirstThread` vm argument from your run configuration. In the future, that should be handled by the plugin, but for now you'll probably have to do that manually. 
 
 To export your project, run the `gradle build` task, and give other people the
-file `build/libs/<modid>-<version>-all.jar`
+file `build/libs/<modid>-<version>.jar`. Ignore the jars in the `build/badjars` folder. Those are intermediary jars that
+are used by the build system but *do not work* in a normal forge installation.
 
 ### For those who have not an attention span
 
