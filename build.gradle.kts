@@ -12,7 +12,7 @@ val baseGroup: String by project
 val mcVersion: String by project
 val version: String by project
 val mixinGroup = "$baseGroup.mixin"
-val modid = rootProject.name
+val modid: String by project
 
 // Toolchains:
 java {
