@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.SystemUtils
+
 plugins {
     idea
     java
@@ -29,6 +31,15 @@ loom {
             property("asmhelper.verbose", "true")
             arg("--tweakClass", "org.spongepowered.asm.launch.MixinTweaker")
         }
+    }
+    runConfigs {
+        "client" {
+            if (SystemUtils.IS_OS_MAC_OSX) {
+                // This argument causes a crash on macOS
+                vmArgs.remove("-XstartOnFirstThread")
+            }
+        }
+        remove(getByName("server"))
     }
     forge {
         pack200Provider.set(dev.architectury.pack200.java.Pack200Adapter())
