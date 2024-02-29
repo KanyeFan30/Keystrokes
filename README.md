@@ -2,6 +2,12 @@
 
 **For other templates, do check out the [other branches of this repository](https://github.com/romangraef/Forge1.8.9Template/branches/all)**
 
+## Usage
+
+Check out https://moddev.nea.moe/ for a full tutorial on legacy modding.
+
+Alternatively, read here for a basic overview on how to use this repository.
+
 To get started, clone this repository.
 In `build.gradle.kts`, replace the values of `baseGroup` and `group` with your own names.
 In `settings.gradle.kts` change `rootProject.name` to your desired mod id.
