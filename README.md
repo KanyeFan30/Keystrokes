@@ -8,14 +8,10 @@ Check out https://moddev.nea.moe/ for a full tutorial on legacy modding.
 
 Alternatively, read here for a basic overview on how to use this repository.
 
-To get started, clone this repository.
-In `build.gradle.kts`, replace the values of `baseGroup` and `group` with your own names.
-In `settings.gradle.kts` change `rootProject.name` to your desired mod id.
+To get started, [Use this template](https://github.com/new?template_name=Forge1.8.9Template&template_owner=nea89o).
 
-The `com.example` package needs to be renamed to match the value of `baseGroup`.
-
-If you don't want mixins (which allow for modifying vanilla code), then you can remove the references to mixins from
-the `build.gradle.kts` at the lines specified with comments and the `com.example.mixin` package.
+> [!WARNING]
+> Do not Fork or Clone or Download ZIP this template. If you "use" this template a custom mod id will be generated. You can do that manually using the `make-my-own` script, if you are on linux. If not, just click the use this template button. If you want to use kotlin or make a 1.12 mod check the "Include all branches" and change the default branch in https://github.com/yourname/yourreponame/branches
 
 This project uses [DevAuth](https://github.com/DJtheRedstoner/DevAuth) per default, so you can log in using your real
 minecraft account. If you don't need that, you can remove it from the buildscript.
@@ -30,6 +26,9 @@ called `Minecraft Client`. If it doesn't then try relaunching your IntelliJ. **W
 To export your project, run the `gradle build` task, and give other people the
 file `build/libs/<modid>-<version>.jar`. Ignore the jars in the `build/badjars` folder. Those are intermediary jars that
 are used by the build system but *do not work* in a normal forge installation.
+
+If you don't want mixins (which allow for modifying vanilla code), then you can remove the references to mixins from
+the `build.gradle.kts` at the lines specified with comments and the `com.example.mixin` package.
 
 ### For those who have not an attention span
 
