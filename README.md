@@ -30,6 +30,10 @@ are used by the build system but *do not work* in a normal forge installation.
 If you don't want mixins (which allow for modifying vanilla code), then you can remove the references to mixins from
 the `build.gradle.kts` at the lines specified with comments and the `com.example.mixin` package.
 
+If you don't want access transformers (which allow for making methods public/non-final) you can delete the
+`accesstransformer.cfg` file. If you make a change to the `accesstransformers.cfg` you might need to rebuild your
+project using `./gradlew build --refresh-dependencies`.
+
 ### For those who have not an attention span
 
 [![Youtube Tutorial](https://i.ytimg.com/vi/nWzHlomdCgc/maxresdefault.jpg)](https://www.youtube.com/watch?v=nWzHlomdCgc)
