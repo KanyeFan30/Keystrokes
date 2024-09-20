@@ -20,15 +20,15 @@ public class KeystrokesMod extends Gui {
         int screenWidth = sr.getScaledWidth();
         int screenHeight = sr.getScaledHeight();
 
-        int baseX = screenWidth - 100;
-        int baseY = screenHeight - 80;
+        int baseX = screenWidth - 2 * BOX_WIDTH;
+        int baseY = screenHeight - 4 * BOX_WIDTH;
         renderKey(baseX, baseY, "W", mc.gameSettings.keyBindForward);
-        renderKey(baseX - 20, baseY + 20, "A", mc.gameSettings.keyBindLeft);
-        renderKey(baseX, baseY + 20, "S", mc.gameSettings.keyBindBack);
-        renderKey(baseX + 20, baseY + 20, "D", mc.gameSettings.keyBindRight);
-        renderKey(baseX, baseY + 40, "—", mc.gameSettings.keyBindJump);
-        renderKey(baseX - 20, baseY + 60, "LMB", mc.gameSettings.keyBindAttack);
-        renderKey(baseX + 20, baseY + 60, "RMB", mc.gameSettings.keyBindUseItem);
+        renderKey(baseX - BOX_WIDTH, baseY + BOX_WIDTH, "A", mc.gameSettings.keyBindLeft);
+        renderKey(baseX, baseY + BOX_WIDTH, "S", mc.gameSettings.keyBindBack);
+        renderKey(baseX + BOX_WIDTH, baseY + BOX_WIDTH, "D", mc.gameSettings.keyBindRight);
+        renderKey(baseX, baseY + 2 * BOX_WIDTH, "—", mc.gameSettings.keyBindJump);
+        renderKey(baseX - BOX_WIDTH, baseY + 3 * BOX_WIDTH, "LMB", mc.gameSettings.keyBindAttack);
+        renderKey(baseX + BOX_WIDTH, baseY + 3 * BOX_WIDTH, "RMB", mc.gameSettings.keyBindUseItem);
     }
 
     private void renderKey(int x, int y, String key, KeyBinding keyBinding) {
