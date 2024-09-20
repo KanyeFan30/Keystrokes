@@ -14,11 +14,6 @@ public class KeystrokesMod extends Gui {
     private final Minecraft mc = Minecraft.getMinecraft();
     private static final int BOX_WIDTH = 20;
 
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
-
     @SubscribeEvent
     public void onRenderGameOverlay(RenderGameOverlayEvent.Text event) {
         ScaledResolution sr = new ScaledResolution(mc);
