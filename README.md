@@ -4,4 +4,4 @@
 
 **Changelog**
 
-* 
+* **v1.0**: A barebones implementation which draws boxes and writes key names in them.
