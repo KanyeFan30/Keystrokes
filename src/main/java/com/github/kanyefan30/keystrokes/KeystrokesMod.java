@@ -12,10 +12,11 @@ import java.util.Objects;
 public class KeystrokesMod extends Gui {
     private final Minecraft mc = Minecraft.getMinecraft();
     private static final int KEY_WIDTH = 20;
-    private static final int SPACE_WIDTH = 60;
+    private static final int GAP = 1;
+    private static final int SPACE_WIDTH = 3 * KEY_WIDTH + 2 * GAP;
+    private static final int SPACE_HEIGHT = 12;
     private static final int MB_WIDTH = 30;
     private static final int BUTTON_HEIGHT = 20;
-    private static final int SPACE_HEIGHT = 12;
 
     @SubscribeEvent
     public void onRenderGameOverlay(RenderGameOverlayEvent.Text event) {
@@ -23,15 +24,15 @@ public class KeystrokesMod extends Gui {
         int screenWidth = sr.getScaledWidth();
         int screenHeight = sr.getScaledHeight();
 
-        int baseX = screenWidth - 3 * KEY_WIDTH;
-        int baseY = screenHeight - 3 * KEY_WIDTH - SPACE_HEIGHT;
-        renderKey(baseX + KEY_WIDTH, baseY, "W", mc.gameSettings.keyBindForward);
-        renderKey(baseX, baseY + BUTTON_HEIGHT, "A", mc.gameSettings.keyBindLeft);
-        renderKey(baseX + KEY_WIDTH, baseY + KEY_WIDTH, "S", mc.gameSettings.keyBindBack);
-        renderKey(baseX + 2 * KEY_WIDTH, baseY + BUTTON_HEIGHT, "D", mc.gameSettings.keyBindRight);
-        renderKey(baseX, baseY + 2 * BUTTON_HEIGHT, "LMB", mc.gameSettings.keyBindAttack);
-        renderKey(baseX + MB_WIDTH, baseY + 2 * BUTTON_HEIGHT, "RMB", mc.gameSettings.keyBindUseItem);
-        renderKey(baseX, baseY + 3 * BUTTON_HEIGHT, "-", mc.gameSettings.keyBindJump);
+        int baseX = screenWidth - (3 * KEY_WIDTH + 2 * GAP) - GAP;
+        int baseY = screenHeight - (3 * KEY_WIDTH + SPACE_HEIGHT + 3 * GAP) - GAP;
+        renderKey(baseX + KEY_WIDTH + GAP, baseY, "W", mc.gameSettings.keyBindForward);
+        renderKey(baseX, baseY + BUTTON_HEIGHT + GAP, "A", mc.gameSettings.keyBindLeft);
+        renderKey(baseX + KEY_WIDTH + GAP, baseY + BUTTON_HEIGHT + GAP, "S", mc.gameSettings.keyBindBack);
+        renderKey(baseX + 2 * KEY_WIDTH + 2 * GAP, baseY + BUTTON_HEIGHT + GAP, "D", mc.gameSettings.keyBindRight);
+        renderKey(baseX, baseY + 2 * BUTTON_HEIGHT + 2 * GAP, "LMB", mc.gameSettings.keyBindAttack);
+        renderKey(baseX + MB_WIDTH + 2 * GAP, baseY + 2 * BUTTON_HEIGHT + 2 * GAP, "RMB", mc.gameSettings.keyBindUseItem);
+        renderKey(baseX, baseY + 3 * BUTTON_HEIGHT + 3 * GAP, "-", mc.gameSettings.keyBindJump);
     }
 
     private void renderKey(int x, int y, String key, KeyBinding keyBinding) {
