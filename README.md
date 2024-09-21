@@ -6,6 +6,6 @@
 
 * **v1.0**: A barebones implementation which draws boxes and writes key names in them.
 
-* **v1.1**: Improved appearance, as well as reorganization of key layout
+* **v1.1**: Improved the appearance by adding gaps between keys and an offset from the edge of the screen. The key layout was reorganized to follow convention.
 
   ![alt text](https://github.com/KanyeFan30/Keystrokes/blob/master/src/main/resources/1.1_unpressed.png) ![alt text](https://github.com/KanyeFan30/Keystrokes/blob/master/src/main/resources/1.1_pressed.png)
