@@ -24,7 +24,7 @@ public class KeystrokesMod extends Gui {
         int screenHeight = sr.getScaledHeight();
 
         int baseX = screenWidth - 3 * KEY_WIDTH;
-        int baseY = screenHeight - 4 * KEY_WIDTH;
+        int baseY = screenHeight - 3 * KEY_WIDTH - SPACE_HEIGHT;
         renderKey(baseX + KEY_WIDTH, baseY, "W", mc.gameSettings.keyBindForward);
         renderKey(baseX, baseY + BUTTON_HEIGHT, "A", mc.gameSettings.keyBindLeft);
         renderKey(baseX + KEY_WIDTH, baseY + KEY_WIDTH, "S", mc.gameSettings.keyBindBack);
@@ -46,7 +46,7 @@ public class KeystrokesMod extends Gui {
         int letterHeight = mc.fontRendererObj.FONT_HEIGHT;
         int boxWidth = getBoxWidth(key);
         int boxHeight = getBoxHeight(key);
-        drawRect(x, y, x + boxWidth, y + BUTTON_HEIGHT, boxColour);
+        drawRect(x, y, x + boxWidth, y + boxHeight, boxColour);
         mc.fontRendererObj.drawString(key, x + (boxWidth - letterWidth) / 2, y + (boxHeight - letterHeight) / 2, keyColour);
     }
 
