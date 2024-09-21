@@ -15,7 +15,7 @@ public class KeystrokesMod extends Gui {
     private static final int SPACE_WIDTH = 60;
     private static final int MB_WIDTH = 30;
     private static final int BUTTON_HEIGHT = 20;
-    private static final int SPACE_HEIGHT = 10;
+    private static final int SPACE_HEIGHT = 12;
 
     @SubscribeEvent
     public void onRenderGameOverlay(RenderGameOverlayEvent.Text event) {
