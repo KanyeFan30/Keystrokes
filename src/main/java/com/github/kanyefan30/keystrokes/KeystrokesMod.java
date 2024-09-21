@@ -15,6 +15,7 @@ public class KeystrokesMod extends Gui {
     private static final int SPACE_WIDTH = 60;
     private static final int MB_WIDTH = 30;
     private static final int BUTTON_HEIGHT = 20;
+    private static final int SPACE_HEIGHT = 10;
 
     @SubscribeEvent
     public void onRenderGameOverlay(RenderGameOverlayEvent.Text event) {
@@ -28,9 +29,9 @@ public class KeystrokesMod extends Gui {
         renderKey(baseX, baseY + BUTTON_HEIGHT, "A", mc.gameSettings.keyBindLeft);
         renderKey(baseX + KEY_WIDTH, baseY + KEY_WIDTH, "S", mc.gameSettings.keyBindBack);
         renderKey(baseX + 2 * KEY_WIDTH, baseY + BUTTON_HEIGHT, "D", mc.gameSettings.keyBindRight);
-        renderKey(baseX, baseY + 2 * BUTTON_HEIGHT, "-", mc.gameSettings.keyBindJump);
-        renderKey(baseX, baseY + 3 * BUTTON_HEIGHT, "LMB", mc.gameSettings.keyBindAttack);
-        renderKey(baseX + MB_WIDTH, baseY + 3 * BUTTON_HEIGHT, "RMB", mc.gameSettings.keyBindUseItem);
+        renderKey(baseX, baseY + 2 * BUTTON_HEIGHT, "LMB", mc.gameSettings.keyBindAttack);
+        renderKey(baseX + MB_WIDTH, baseY + 2 * BUTTON_HEIGHT, "RMB", mc.gameSettings.keyBindUseItem);
+        renderKey(baseX, baseY + 3 * BUTTON_HEIGHT, "-", mc.gameSettings.keyBindJump);
     }
 
     private void renderKey(int x, int y, String key, KeyBinding keyBinding) {
@@ -44,8 +45,9 @@ public class KeystrokesMod extends Gui {
         int letterWidth = mc.fontRendererObj.getStringWidth(key);
         int letterHeight = mc.fontRendererObj.FONT_HEIGHT;
         int boxWidth = getBoxWidth(key);
+        int boxHeight = getBoxHeight(key);
         drawRect(x, y, x + boxWidth, y + BUTTON_HEIGHT, boxColour);
-        mc.fontRendererObj.drawString(key, x + (boxWidth - letterWidth) / 2, y + (BUTTON_HEIGHT - letterHeight) / 2, keyColour);
+        mc.fontRendererObj.drawString(key, x + (boxWidth - letterWidth) / 2, y + (boxHeight - letterHeight) / 2, keyColour);
     }
 
     private int getBoxWidth(String key) {
@@ -55,6 +57,14 @@ public class KeystrokesMod extends Gui {
             return MB_WIDTH;
         } else {
             return KEY_WIDTH;
+        }
+    }
+
+    private int getBoxHeight(String key) {
+        if (Objects.equals(key, "-")) {
+            return SPACE_HEIGHT;
+        } else {
+            return BUTTON_HEIGHT;
         }
     }
 }
