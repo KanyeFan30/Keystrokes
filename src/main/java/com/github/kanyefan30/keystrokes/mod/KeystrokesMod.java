@@ -11,6 +11,7 @@ import java.util.Objects;
 
 public class KeystrokesMod extends Gui {
     private final Minecraft mc = Minecraft.getMinecraft();
+
     private static final int KEY_WIDTH = 20;
     private static final int GAP = 1;
     private static final int SPACE_WIDTH = 3 * KEY_WIDTH + 2 * GAP;
