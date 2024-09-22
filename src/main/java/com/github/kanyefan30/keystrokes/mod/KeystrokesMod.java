@@ -1,4 +1,4 @@
-package com.github.kanyefan30.keystrokes;
+package com.github.kanyefan30.keystrokes.mod;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;

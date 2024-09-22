@@ -1,4 +1,4 @@
-package com.github.kanyefan30.keystrokes;
+package com.github.kanyefan30.keystrokes.mod;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
