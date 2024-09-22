@@ -1,5 +1,6 @@
 package com.github.kanyefan30.keystrokes.mod;
 
+import com.github.kanyefan30.keystrokes.config.Colour;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
@@ -37,22 +38,22 @@ public class KeystrokesMod extends Gui {
     }
 
     private void renderKey(int x, int y, String key, KeyBinding keyBinding) {
-        int boxColour = 0x66000000;
-        int keyColour = 0xFFFFFFFF;
+        int keyColour = 0x66000000;
+        int textColour = 0xFFFFFFFF;
         if (keyBinding.isKeyDown()) {
-            boxColour = 0x66FFFFFF;
-            keyColour = 0xFF000000;
+            keyColour = Colour.keyColour;
+            textColour = Colour.textColour;
         }
 
-        int letterWidth = mc.fontRendererObj.getStringWidth(key);
-        int letterHeight = mc.fontRendererObj.FONT_HEIGHT;
-        int boxWidth = getBoxWidth(key);
-        int boxHeight = getBoxHeight(key);
-        drawRect(x, y, x + boxWidth, y + boxHeight, boxColour);
-        mc.fontRendererObj.drawString(key, x + (boxWidth - letterWidth) / 2, y + (boxHeight - letterHeight) / 2, keyColour);
+        int textWidth = mc.fontRendererObj.getStringWidth(key);
+        int textHeight = mc.fontRendererObj.FONT_HEIGHT;
+        int keyWidth = getKeyWidth(key);
+        int keyHeight = getKeyHeight(key);
+        drawRect(x, y, x + keyWidth, y + keyHeight, keyColour);
+        mc.fontRendererObj.drawString(key, x + (keyWidth - textWidth) / 2, y + (keyHeight - textHeight) / 2, textColour);
     }
 
-    private int getBoxWidth(String key) {
+    private int getKeyWidth(String key) {
         if (Objects.equals(key, "-")) {
             return SPACE_WIDTH;
         } else if (Objects.equals(key, "LMB") || Objects.equals(key, "RMB")) {
@@ -62,7 +63,7 @@ public class KeystrokesMod extends Gui {
         }
     }
 
-    private int getBoxHeight(String key) {
+    private int getKeyHeight(String key) {
         if (Objects.equals(key, "-")) {
             return SPACE_HEIGHT;
         } else {
