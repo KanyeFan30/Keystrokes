@@ -24,15 +24,15 @@ public class KeystrokesMod extends Gui {
         int screenWidth = sr.getScaledWidth();
         int screenHeight = sr.getScaledHeight();
 
-        int baseX = screenWidth - (3 * KEY_WIDTH + 2 * GAP) - GAP;
-        int baseY = screenHeight - (3 * KEY_WIDTH + SPACE_HEIGHT + 3 * GAP) - GAP;
-        renderKey(baseX + KEY_WIDTH + GAP, baseY, "W", mc.gameSettings.keyBindForward);
-        renderKey(baseX, baseY + BUTTON_HEIGHT + GAP, "A", mc.gameSettings.keyBindLeft);
-        renderKey(baseX + KEY_WIDTH + GAP, baseY + BUTTON_HEIGHT + GAP, "S", mc.gameSettings.keyBindBack);
-        renderKey(baseX + 2 * KEY_WIDTH + 2 * GAP, baseY + BUTTON_HEIGHT + GAP, "D", mc.gameSettings.keyBindRight);
-        renderKey(baseX, baseY + 2 * BUTTON_HEIGHT + 2 * GAP, "LMB", mc.gameSettings.keyBindAttack);
-        renderKey(baseX + MB_WIDTH + 2 * GAP, baseY + 2 * BUTTON_HEIGHT + 2 * GAP, "RMB", mc.gameSettings.keyBindUseItem);
-        renderKey(baseX, baseY + 3 * BUTTON_HEIGHT + 3 * GAP, "-", mc.gameSettings.keyBindJump);
+        int baseX = screenWidth - GAP;
+        int baseY = screenHeight - GAP;
+        renderKey(baseX - 2 * KEY_WIDTH - GAP, baseY - 3 * BUTTON_HEIGHT - 3 * GAP - SPACE_HEIGHT, "W", mc.gameSettings.keyBindForward);
+        renderKey(baseX - SPACE_WIDTH, baseY - 2 * BUTTON_HEIGHT - 2 * GAP - SPACE_HEIGHT, "A", mc.gameSettings.keyBindLeft);
+        renderKey(baseX - 2 * KEY_WIDTH - GAP, baseY - 2 * BUTTON_HEIGHT - 2 * GAP - SPACE_HEIGHT, "S", mc.gameSettings.keyBindBack);
+        renderKey(baseX - KEY_WIDTH, baseY - 2 * BUTTON_HEIGHT - 2 * GAP - SPACE_HEIGHT, "D", mc.gameSettings.keyBindRight);
+        renderKey(baseX - SPACE_WIDTH, baseY - SPACE_HEIGHT - GAP - BUTTON_HEIGHT, "LMB", mc.gameSettings.keyBindAttack);
+        renderKey(baseX - MB_WIDTH, baseY - SPACE_HEIGHT - GAP - BUTTON_HEIGHT, "RMB", mc.gameSettings.keyBindUseItem);
+        renderKey(baseX - SPACE_WIDTH, baseY - SPACE_HEIGHT, "-", mc.gameSettings.keyBindJump);
     }
 
     private void renderKey(int x, int y, String key, KeyBinding keyBinding) {
