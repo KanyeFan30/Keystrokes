@@ -1,6 +1,7 @@
 package com.github.kanyefan30.keystrokes.mod;
 
 import com.github.kanyefan30.keystrokes.config.Command;
+import com.github.kanyefan30.keystrokes.config.ConfigGui;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +14,7 @@ public class KeystrokesInitializer {
         MinecraftForge.EVENT_BUS.register(new KeystrokesMod());
         MinecraftForge.EVENT_BUS.register(this);
 
+        MinecraftForge.EVENT_BUS.register(new ConfigGui());
         ClientCommandHandler.instance.registerCommand(new Command());
     }
 }

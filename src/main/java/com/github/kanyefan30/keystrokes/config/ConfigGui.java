@@ -58,8 +58,8 @@ public class ConfigGui extends GuiScreen {
         int keyStringWidth = fr.getStringWidth(keyString);
         int textStringWidth = fr.getStringWidth(textString);
 
-        fr.drawString(keyString, this.width - 105 - keyStringWidth / 2, this.height / 2 - 85, 0xFFFFFFFF);
-        fr.drawString(keyString, this.width + 105 - textStringWidth / 2, this.height / 2 - 85, 0xFFFFFFFF);
+        fr.drawString(keyString, this.width / 2 - 105 - keyStringWidth / 2, this.height / 2 - 85, 0xFFFFFFFF);
+        fr.drawString(keyString, this.width / 2 + 105 - textStringWidth / 2, this.height / 2 - 85, 0xFFFFFFFF);
 
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
