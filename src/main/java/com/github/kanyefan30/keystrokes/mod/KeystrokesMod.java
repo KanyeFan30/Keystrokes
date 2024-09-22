@@ -38,11 +38,9 @@ public class KeystrokesMod extends Gui {
     }
 
     private void renderKey(int x, int y, String key, KeyBinding keyBinding) {
-        int keyColour = 0x66000000;
-        int textColour = 0xFFFFFFFF;
+        int keyColour = Colour.unpressedColour;
         if (keyBinding.isKeyDown()) {
-            keyColour = Colour.keyColour;
-            textColour = Colour.textColour;
+            keyColour = Colour.pressedColour;
         }
 
         int textWidth = mc.fontRendererObj.getStringWidth(key);
@@ -50,7 +48,7 @@ public class KeystrokesMod extends Gui {
         int keyWidth = getKeyWidth(key);
         int keyHeight = getKeyHeight(key);
         drawRect(x, y, x + keyWidth, y + keyHeight, keyColour);
-        mc.fontRendererObj.drawString(key, x + (keyWidth - textWidth) / 2, y + (keyHeight - textHeight) / 2, textColour);
+        mc.fontRendererObj.drawString(key, x + (keyWidth - textWidth) / 2, y + (keyHeight - textHeight) / 2, Colour.textColour);
     }
 
     private int getKeyWidth(String key) {

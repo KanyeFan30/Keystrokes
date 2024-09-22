@@ -17,7 +17,7 @@ public class ConfigGui extends GuiScreen {
     public static HashMap<Integer, Integer> buttonColourMap = new HashMap<>();
     public ConfigGui() {
         // Key colours
-        buttonColourMap.put(0, 0x6647097A);
+        buttonColourMap.put(0, 0x66000000);
         buttonColourMap.put(1, 0x66FFFFFF);
         buttonColourMap.put(2, 0x667A0000);
         buttonColourMap.put(3, 0x66EF9F00);
@@ -25,20 +25,13 @@ public class ConfigGui extends GuiScreen {
         buttonColourMap.put(5, 0x6600137F);
 
         // Text colours
-        buttonColourMap.put(6, 0x6647097A);
+        buttonColourMap.put(6, 0x66000000);
         buttonColourMap.put(7, 0x66FFFFFF);
         buttonColourMap.put(8, 0x667A0000);
         buttonColourMap.put(9, 0x66EF9F00);
         buttonColourMap.put(10, 0x661A5600);
         buttonColourMap.put(11, 0x6600137F);
     }
-
-
-    public static final int MOUSE_LEFT = 0;
-    public static final int MOUSE_RIGHT = 1;
-    public static final int MOUSE_MIDDLE = 2;
-    public static final int MOUSE_BACKWARD = 3;
-    public static final int MOUSE_FORWARD = 4;
 
     @SubscribeEvent
     public void onTick(TickEvent.ClientTickEvent event) {
@@ -53,7 +46,7 @@ public class ConfigGui extends GuiScreen {
     public void initGui() {
         super.initGui();
         // Key colour buttons
-        this.buttonList.add(new GuiButton(0, this.width / 2 - 205, this.height / 2 - 60, "Purple"));
+        this.buttonList.add(new GuiButton(0, this.width / 2 - 205, this.height / 2 - 60, "Black"));
         this.buttonList.add(new GuiButton(1, this.width / 2 - 205, this.height / 2 - 35, "White"));
         this.buttonList.add(new GuiButton(2, this.width / 2 - 205, this.height / 2 - 10, "Red"));
         this.buttonList.add(new GuiButton(3, this.width / 2 - 205, this.height / 2 + 15, "Yellow"));
@@ -61,7 +54,7 @@ public class ConfigGui extends GuiScreen {
         this.buttonList.add(new GuiButton(5, this.width / 2 - 205, this.height / 2 + 65, "Blue"));
 
         // Text colour buttons
-        this.buttonList.add(new GuiButton(6, this.width / 2 + 5, this.height / 2 - 60, "Purple"));
+        this.buttonList.add(new GuiButton(6, this.width / 2 + 5, this.height / 2 - 60, "Black"));
         this.buttonList.add(new GuiButton(7, this.width / 2 + 5, this.height / 2 - 35, "White"));
         this.buttonList.add(new GuiButton(8, this.width / 2 + 5, this.height / 2 - 10, "Red"));
         this.buttonList.add(new GuiButton(9, this.width / 2 + 5, this.height / 2 + 15, "Yellow"));
@@ -74,8 +67,8 @@ public class ConfigGui extends GuiScreen {
         drawDefaultBackground();
 
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
-        String keyString = "Key Colours";
-        String textString = "Text Colours";
+        String keyString = "Unpressed Colours";
+        String textString = "Pressed Colours";
         int keyStringWidth = fr.getStringWidth(keyString);
         int textStringWidth = fr.getStringWidth(textString);
 
@@ -101,9 +94,9 @@ public class ConfigGui extends GuiScreen {
     @Override
     protected void actionPerformed(GuiButton button) throws IOException {
         if (button.id >= 0 && button.id <= 5) {
-            Colour.setKeyColour(buttonColourMap.get(button.id));
+            Colour.setUnpressedColour(buttonColourMap.get(button.id));
         } else {
-            Colour.setTextColour(buttonColourMap.get(button.id));
+            Colour.setPressedColour(buttonColourMap.get(button.id));
         }
     }
 }
