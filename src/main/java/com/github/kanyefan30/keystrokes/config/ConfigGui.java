@@ -64,8 +64,6 @@ public class ConfigGui extends GuiScreen {
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        drawDefaultBackground();
-
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
         String keyString = "Unpressed Colours";
         String textString = "Pressed Colours";

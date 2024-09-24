@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class ConfigOptions {
     public static boolean showOverlay = true;
 
-    private static HashMap<String, Boolean> keyDisplayed = new HashMap<>();
+    private static final HashMap<String, Boolean> keyDisplayed = new HashMap<>();
     static {
         keyDisplayed.put("W", true);
         keyDisplayed.put("A", true);
@@ -17,7 +17,7 @@ public class ConfigOptions {
     }
 
     public static int pressedColour = 0x66FFFFFF;;
-    public static int unpressedColour = 0xFF000000;
+    public static int unpressedColour = 0x66000000;
     public static int textColour = 0xFFFFFFFF;
 
     public static void setPressedColour(int newPressedColour) {
@@ -37,5 +37,10 @@ public class ConfigOptions {
             return;
         }
         keyDisplayed.put(key, !keyDisplayed.get(key));
+    }
+
+    public static int setOpacity(int colour, int sliderNumber) {
+        colour = colour & 0x00FFFFFF | (sliderNumber << 24);
+        return colour;
     }
 }
