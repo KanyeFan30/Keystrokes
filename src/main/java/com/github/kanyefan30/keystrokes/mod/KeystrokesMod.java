@@ -22,6 +22,8 @@ public class KeystrokesMod extends Gui {
 
     @SubscribeEvent
     public void onRenderGameOverlay(RenderGameOverlayEvent.Text event) {
+        if (!ConfigOptions.showOverlay) return;
+
         ScaledResolution sr = new ScaledResolution(mc);
         int screenWidth = sr.getScaledWidth();
         int screenHeight = sr.getScaledHeight();

@@ -3,9 +3,7 @@ package com.github.kanyefan30.keystrokes.config;
 import java.util.HashMap;
 
 public class ConfigOptions {
-    public static int pressedColour = 0x66FFFFFF;;
-    public static int unpressedColour = 0xFF000000;
-    public static int textColour = 0xFFFFFFFF;
+    public static boolean showOverlay = true;
 
     private static HashMap<String, Boolean> keyDisplayed = new HashMap<>();
     static {
@@ -18,12 +16,20 @@ public class ConfigOptions {
         keyDisplayed.put("Space", true);
     }
 
+    public static int pressedColour = 0x66FFFFFF;;
+    public static int unpressedColour = 0xFF000000;
+    public static int textColour = 0xFFFFFFFF;
+
     public static void setPressedColour(int newPressedColour) {
         pressedColour = newPressedColour;
     }
 
     public static void setUnpressedColour(int newUnpressedColour) {
         unpressedColour = newUnpressedColour;
+    }
+
+    public static void toggleOverlayDisplay() {
+        showOverlay = !showOverlay;
     }
 
     public static void toggleKeyDisplay(String key) {
