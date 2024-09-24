@@ -94,9 +94,9 @@ public class ConfigGui extends GuiScreen {
     @Override
     protected void actionPerformed(GuiButton button) throws IOException {
         if (button.id >= 0 && button.id <= 5) {
-            Colour.setUnpressedColour(buttonColourMap.get(button.id));
+            ConfigOptions.setUnpressedColour(buttonColourMap.get(button.id));
         } else {
-            Colour.setPressedColour(buttonColourMap.get(button.id));
+            ConfigOptions.setPressedColour(buttonColourMap.get(button.id));
         }
     }
 }

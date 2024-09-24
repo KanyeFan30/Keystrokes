@@ -4,7 +4,7 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 
-public class Command extends CommandBase {
+public class ConfigCommand extends CommandBase {
 
     @Override
     public String getCommandName() {

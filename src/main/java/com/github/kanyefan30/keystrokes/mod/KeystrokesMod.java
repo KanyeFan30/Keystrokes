@@ -1,6 +1,6 @@
 package com.github.kanyefan30.keystrokes.mod;
 
-import com.github.kanyefan30.keystrokes.config.Colour;
+import com.github.kanyefan30.keystrokes.config.ConfigOptions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
@@ -38,9 +38,9 @@ public class KeystrokesMod extends Gui {
     }
 
     private void renderKey(int x, int y, String key, KeyBinding keyBinding) {
-        int keyColour = Colour.unpressedColour;
+        int keyColour = ConfigOptions.unpressedColour;
         if (keyBinding.isKeyDown()) {
-            keyColour = Colour.pressedColour;
+            keyColour = ConfigOptions.pressedColour;
         }
 
         int textWidth = mc.fontRendererObj.getStringWidth(key);
@@ -48,7 +48,7 @@ public class KeystrokesMod extends Gui {
         int keyWidth = getKeyWidth(key);
         int keyHeight = getKeyHeight(key);
         drawRect(x, y, x + keyWidth, y + keyHeight, keyColour);
-        mc.fontRendererObj.drawString(key, x + (keyWidth - textWidth) / 2, y + (keyHeight - textHeight) / 2, Colour.textColour);
+        mc.fontRendererObj.drawString(key, x + (keyWidth - textWidth) / 2, y + (keyHeight - textHeight) / 2, ConfigOptions.textColour);
     }
 
     private int getKeyWidth(String key) {
